@@ -246,9 +246,77 @@ button{cursor:pointer}
 .f select{width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
 .madded{display:grid;gap:4px;margin-top:2px;font-size:13.5px;color:var(--ink2);max-height:150px;overflow:auto}
 .mline{padding:5px 10px;border-radius:8px;background:var(--lime-soft)}
+/* фильтры: компактно */
+.layout{margin-top:20px}
+.fwrap{position:relative}
+.fbadge{display:inline-grid;place-items:center;min-width:19px;height:19px;padding:0 5px;margin-left:8px;border-radius:99px;background:var(--btn-bg);color:var(--btn-ink);font-size:12px;font-weight:700}
+.fbadge[hidden]{display:none}
+.fpop{position:absolute;right:0;top:calc(100% + 8px);z-index:30;width:390px;max-width:92vw;padding:16px;box-shadow:var(--shadow)}
+.fpop[hidden]{display:none}
+.fpop .fg{display:grid;gap:8px;margin-bottom:14px}
+.fpop .fg>div{display:flex;flex-wrap:wrap;gap:7px}
+.fpfoot{display:flex;align-items:center;justify-content:space-between;font-size:13px;color:var(--ink3)}
+.fstrip{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:14px}
+.fstrip[hidden]{display:none}
+.achip{display:inline-flex;align-items:center;gap:6px;border:0;border-radius:999px;padding:3px 9px 3px 12px;font-size:12.5px;font-weight:600;background:var(--ink);color:var(--bg)}
+.achip[data-fs]{background:var(--fill);color:#2B2A22}
+.achip[data-fj]{background:var(--p);color:#fff}
+.achip:hover{filter:brightness(.95)}
+
+/* задачи на несколько дней, планёрка */
+.talk{display:inline-flex;align-items:center;color:#5A5744}
+.rng{font-variant-numeric:tabular-nums}
+.dl{font-weight:650;color:#2B2A22}
+.shint{color:var(--ink3);font-size:13px}
+.cont{display:flex;align-items:center;gap:6px;padding:3px 8px;border-radius:8px;border:1px dashed var(--c);background:color-mix(in srgb,var(--fill) 38%,transparent);font-size:11.5px;color:var(--ink2);cursor:pointer;min-width:0}
+.cont:hover{background:color-mix(in srgb,var(--fill) 65%,transparent)}
+.cont .ctt{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.carr{color:var(--cd);flex:none}
+.daycont{display:grid;gap:6px;padding:12px 16px 0}
+.daycont .cont{font-size:13px;padding:6px 10px}
+.chkrow{display:flex;align-items:center;gap:10px;margin:0 0 14px;cursor:pointer;font-size:14.5px}
+.chkrow input{width:18px;height:18px;accent-color:#8E9A4A;flex:none}
+.modal.wide{max-width:660px}
+.rnav{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.rtitle{flex:1;text-align:center;font-weight:650;font-size:16px}
+.rall{margin-bottom:10px}
+.rlist{max-height:52vh;overflow:auto;padding-right:4px;display:grid;gap:16px;align-content:start;min-height:120px}
+.rgh{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.rgh .tag{margin-bottom:0}
+.rnone{font-weight:600;color:var(--ink2);font-size:13px}
+.rcnt{color:var(--ink3);font-size:13px}
+.ritem{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border-radius:10px;border:1px solid var(--line);margin-bottom:6px;cursor:pointer;background:var(--surface)}
+.ritem input{margin-top:3px;width:16px;height:16px;accent-color:#8E9A4A;flex:none}
+.rbody{flex:1;min-width:0}
+.rtt{font-weight:550;overflow-wrap:anywhere}
+.rds{font-size:13px;color:var(--ink2);margin-top:2px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.rst{font-size:12px;padding:1px 9px;border-radius:99px;white-space:nowrap;color:#2B2A22}
+.rst.done{background:#D8DD80}
+.rst.work{background:#DA95AA}
+.rempty{color:var(--ink2);text-align:center;padding:26px 10px;border:1.5px dashed var(--line);border-radius:14px}
+
+/* банка с клубничками */
+.jarwrap{display:flex;gap:14px;align-items:center;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.jarsvg{width:112px;height:140px;flex:none;display:block;overflow:visible}
+.jback{fill:color-mix(in srgb,var(--surface) 60%,transparent)}
+.jglass{fill:none;stroke:var(--ink3);stroke-width:2.5;stroke-linejoin:round}
+.jhl{stroke:#fff;stroke-opacity:.6;stroke-width:2;stroke-linecap:round;fill:none}
+.jlid{fill:#A2AD61;stroke:#8E9A4A;stroke-width:1.5}
+.jridge{stroke:#8E9A4A;stroke-width:1.2;stroke-linecap:round;fill:none}
+.jarsvg .drop{animation:jdrop .7s cubic-bezier(.3,1.3,.5,1) both}
+@keyframes jdrop{from{transform:translateY(-90px);opacity:0}50%{opacity:1}to{transform:none;opacity:1}}
+.jinfo{min-width:0}
+.jbig{display:flex;align-items:baseline;gap:8px}
+.jbig b{font-size:38px;line-height:1;letter-spacing:-.02em}
+.jbig span{font-size:13px;color:var(--ink2);line-height:1.25}
+.jrows{margin-top:10px;display:grid;gap:3px;font-size:13px;color:var(--ink3)}
+.jrows b{color:var(--ink);font-weight:600}
+.jfull{margin-top:8px;font-size:13px;color:var(--ink);font-weight:600}
+.jfull.empty0{font-weight:400;color:var(--ink3)}
+@media (prefers-reduced-motion:reduce){.jarsvg .drop{animation:none}}
 @media (max-width:1100px){.layout{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:760px){.app{padding:16px 14px 32px}.week{display:block}.wcol{border-left:0;border-top:1px solid var(--line)}.wbody{min-height:60px}.search{margin-left:0;width:100%}.search input{width:100%}.hero h1{font-size:30px}}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
@@ -260,9 +328,11 @@ button{cursor:pointer}
       <button role="tab" data-view="cal" aria-selected="false">Календарь</button>
     </nav>
     <div class="search"><input id="q" type="search" placeholder="Поиск по названию" aria-label="Поиск по названию"></div>
+    <div class="fwrap"><button class="btn" id="fBtn" aria-expanded="false" aria-haspopup="true">Фильтры<span class="fbadge" id="fBadge" hidden>0</span></button><div class="fpop panel" id="fPop" hidden></div></div>
+    <button class="btn" id="rpBtn">Отчёт на планёрку</button>
     <button class="btn primary" id="addBtn">Добавить задачу</button>
   </header>
-  <div class="filters" id="filters"></div>
+  <div class="fstrip" id="fstrip" hidden></div>
   <div class="layout">
     <main id="main"></main>
     <aside><div id="focuscard" class="panel focus"></div><div id="side"></div></aside>
@@ -275,13 +345,18 @@ button{cursor:pointer}
   <form class="modal" id="form" novalidate>
     <div class="mhead"><h2 id="mtitle">Новая задача</h2><button type="button" class="x" data-close aria-label="Закрыть">×</button></div>
     <label class="f"><span>Название</span><input type="text" id="f-title" maxlength="140" placeholder="Что нужно сделать"><em class="err" id="e-title"></em></label>
-    <div class="f"><span>Дата / дедлайн</span>
-      <div class="dline"><input type="date" id="f-date" aria-label="Дата"><button type="button" class="link" id="f-nodate">Без срока</button></div>
-      <div class="hint">Нужен только день, время не указывается. Без даты задача попадёт в список "Без срока".</div>
+    <div class="f"><span>Дедлайн</span>
+      <div class="dline"><input type="date" id="f-date" aria-label="Дедлайн"><button type="button" class="link" id="f-nodate">Без срока</button></div>
+    </div>
+    <div class="f"><span>Начать с (если задача на несколько дней)</span>
+      <div class="dline"><input type="date" id="f-start" aria-label="Начало работы"><button type="button" class="link" id="f-nostart">Убрать</button></div>
+      <div class="hint">Задача будет видна на странице "Сегодня" и в календаре каждый день до дедлайна. Время указывать не нужно. Без дедлайна задача попадёт в список "Без срока".</div>
+      <em class="err" id="e-start"></em>
     </div>
     <div class="f"><span>Проект</span><div class="segf" id="f-proj"></div></div>
     <div class="f"><span>Статус</span><div class="segf" id="f-status"></div></div>
     <div class="f"><span>Приоритет</span><div class="segf" id="f-prio"></div></div>
+    <label class="chkrow"><input type="checkbox" id="f-talk"><span>Рассказать на планёрке</span></label>
     <label class="f"><span>Описание</span><textarea id="f-desc" placeholder="Детали, ссылки, что важно не забыть"></textarea></label>
     <div class="mfoot">
       <button type="button" class="btn danger" id="f-del">Удалить</button>
@@ -303,6 +378,15 @@ button{cursor:pointer}
     <div class="madded" id="m-added"></div>
     <div class="mfoot"><button type="button" class="btn" id="m-close">Новых задач нет</button><span class="sp"></span><button type="submit" class="btn primary">Добавить задачу</button></div>
   </form>
+</div>
+<div class="overlay" id="report" hidden>
+  <div class="modal wide">
+    <div class="mhead"><h2>Отчёт на планёрку</h2><button type="button" class="x" data-rclose aria-label="Закрыть">×</button></div>
+    <div class="rnav"><button type="button" class="btn" data-roff="-1" aria-label="Предыдущая неделя">‹</button><div class="rtitle" id="rp-title"></div><button type="button" class="btn" data-roff="1" aria-label="Следующая неделя">›</button></div>
+    <label class="chkrow rall"><input type="checkbox" id="rp-all"><span>Показать и мелкие задачи</span></label>
+    <div class="rlist" id="rp-list"></div>
+    <div class="mfoot"><button type="button" class="btn" id="rp-copy">Скопировать текст</button><span class="sp"></span><button type="button" class="btn primary" data-rclose>Закрыть</button></div>
+  </div>
 </div>
 <div class="overlay" id="backup" hidden>
   <div class="modal">
@@ -380,8 +464,10 @@ function norm(t){
   if(t.project===undefined&&SEEDMAP[t.title])pj=SEEDMAP[t.title];
   var desc=t.desc||'';
   if(desc.indexOf('Пример пересечения')===0)desc='';
-  return {id:t.id||uid(),title:String(t.title||'Без названия'),date:t.date||'',project:pj,
-    status:ST[t.status]?t.status:'plan',priority:PR[t.priority]?t.priority:'mid',desc:desc};
+  var date=t.date||'',start=(t.start&&date&&t.start<date)?t.start:'';
+  var status=ST[t.status]?t.status:'plan';
+  return {id:t.id||uid(),title:String(t.title||'Без названия'),date:date,start:start,project:pj,
+    status:status,priority:PR[t.priority]?t.priority:'mid',desc:desc,talk:!!t.talk,doneAt:status==='done'?(t.doneAt||''):''};
 }
 function seed(){
   var t0=today(),d=function(n){return addDays(t0,n)};
@@ -557,15 +643,29 @@ function prio(p){
   var flag='<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 1.5v13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path class="fl" d="M3.8 2.5h8.2l-2 3 2 3H3.8z"/></svg>';
   return '<span class="prio prio-'+p+'" title="Приоритет: '+PR[p].toLowerCase()+'">'+flag+'<em>'+PR[p]+'</em></span>';
 }
+var spans=function(t,d){return !!t.start&&!!t.date&&t.status!=='done'&&t.start<=d&&d<t.date};
+var isOngoing=function(t,d){return !!t.date&&t.status!=='done'&&t.date>d&&((!!t.start&&t.start<=d)||t.status==='work')};
+var TALKSVG='<svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M2.5 3h11a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H8l-3 2.5V11H2.5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" fill="currentColor"/></svg>';
+function dlText(t){
+  var n=diffDays(t.date,today());
+  return 'Дедлайн '+shortDate(t.date)+' · '+(n===1?'завтра':'через '+n+' '+pl(n,['день','дня','дней']));
+}
+function contHTML(t){
+  return '<div class="cont st-'+t.status+'" tabindex="0" data-id="'+t.id+'" title="Задача на несколько дней, дедлайн '+shortDate(t.date)+'"><span class="carr">↳</span><span class="ctt">'+esc(t.title)+'</span></div>';
+}
 function card(t,o){
   o=o||{};
   var c=['card','st-'+t.status];
   if(t.status==='done')c.push('done');
   if(o.compact)c.push('compact');
   var meta=[];
-  if(o.showDate&&t.date)meta.push('<span>'+shortDate(t.date)+'</span>');
+  if(o.deadline)meta.push('<span class="dl">'+dlText(t)+'</span>');
+  else if(o.showDate&&t.date)meta.push('<span>'+shortDate(t.date)+'</span>');
+  if(t.start&&t.date&&!o.deadline)meta.push('<span class="rng" title="Задача на несколько дней">'+shortDate(t.start)+' → '+shortDate(t.date)+'</span>');
+  if(t.start&&o.deadline)meta.push('<span class="rng">с '+shortDate(t.start)+'</span>');
   meta.push('<span class="pill" title="Статус: '+ST[t.status].toLowerCase()+'"><i></i><span class="pt">'+ST[t.status]+'</span></span>');
   meta.push(prio(t.priority));
+  if(t.talk)meta.push('<span class="talk" title="Расскажу на планёрке">'+TALKSVG+'</span>');
   if(isLate(t)){var n=diffDays(today(),t.date);meta.push('<span class="late">Просрочено: '+n+' '+pl(n,['день','дня','дней'])+'</span>')}
   if(o.lateBtn)meta.push('<button class="mini" data-totoday>Перенести на сегодня</button>');
   var done=t.status==='done',lbl=done?'Вернуть в план':'Отметить выполненной';
@@ -582,12 +682,21 @@ function render(){
   $('#main').innerHTML=ui.view==='home'?homeHTML():calHTML();
   $('#side').innerHTML=sideHTML();
 }
+function closePop(){var p=$('#fPop');if(p&&!p.hidden){p.hidden=true;$('#fBtn').setAttribute('aria-expanded','false')}}
+function togglePop(){var p=$('#fPop'),open=p.hidden;p.hidden=!open;$('#fBtn').setAttribute('aria-expanded',String(open))}
 function renderFilters(){
   var s=Object.keys(ST).map(function(k){return '<button class="chip st-'+k+'" data-fs="'+k+'" aria-pressed="'+ui.fs.has(k)+'"><i></i>'+ST[k]+'</button>'}).join('');
   var p=Object.keys(PR).map(function(k){return '<button class="chip" data-fp="'+k+'" aria-pressed="'+ui.fp.has(k)+'">'+PR[k]+'</button>'}).join('');
   var j=Object.keys(PJ).map(function(k){return '<button class="chip pj-'+k+'" data-fj="'+k+'" aria-pressed="'+ui.fj.has(k)+'"><i></i>'+PJ[k]+'</button>'}).join('');
-  var active=ui.q||ui.fs.size||ui.fp.size||ui.fj.size;
-  $('#filters').innerHTML='<div class="fg"><span class="fl">Статус</span>'+s+'</div><div class="fg"><span class="fl">Приоритет</span>'+p+'</div><div class="fg"><span class="fl">Проект</span>'+j+'</div>'+(active?'<button class="link" data-reset>Сбросить фильтры</button>':'');
+  var n=ui.fs.size+ui.fp.size+ui.fj.size;
+  $('#fPop').innerHTML='<div class="fg"><span class="fl">Статус</span><div>'+s+'</div></div><div class="fg"><span class="fl">Приоритет</span><div>'+p+'</div></div><div class="fg"><span class="fl">Проект</span><div>'+j+'</div></div>'+
+    '<div class="fpfoot">'+(n?'<button class="link" data-reset>Сбросить фильтры</button>':'<span>Отметьте, что показывать</span>')+'<button class="link" data-fclose>Готово</button></div>';
+  var b=$('#fBadge');b.hidden=!n;b.textContent=n;
+  var st='';
+  Object.keys(ST).forEach(function(k){if(ui.fs.has(k))st+='<button class="achip st-'+k+'" data-fs="'+k+'" title="Убрать фильтр">'+ST[k]+' <span aria-hidden="true">×</span></button>'});
+  Object.keys(PR).forEach(function(k){if(ui.fp.has(k))st+='<button class="achip" data-fp="'+k+'" title="Убрать фильтр">'+PR[k]+' приоритет <span aria-hidden="true">×</span></button>'});
+  Object.keys(PJ).forEach(function(k){if(ui.fj.has(k))st+='<button class="achip pj-'+k+'" data-fj="'+k+'" title="Убрать фильтр">'+PJ[k]+' <span aria-hidden="true">×</span></button>'});
+  var fs=$('#fstrip');fs.hidden=!n;fs.innerHTML=n?st+'<button class="link" data-reset>Сбросить</button>':'';
 }
 function ringHTML(pct){
   var C=2*Math.PI*50;
@@ -618,7 +727,10 @@ function homeHTML(){
   h+='<div class="sec" data-drop="day" data-date="'+t0+'"><div class="sechead"><h2>Задачи на сегодня</h2><span class="cnt">'+lst.length+'</span></div>';
   if(lst.length)h+='<div class="stack">'+lst.map(function(t){return card(t)}).join('')+'</div>';
   else h+='<div class="empty"><p>'+(all.length?'По выбранным фильтрам ничего не найдено.':'На сегодня задач нет. Добавьте новую или перетащите сюда задачу из списка "Без срока".')+'</p>'+(all.length?'':'<button class="btn primary" data-add-today>Добавить задачу</button>')+'</div>';
-  return h+'</div></section>';
+  h+='</div>';
+  var og=tasks.filter(function(t){return isOngoing(t,t0)&&match(t)}).sort(function(a,b){return a.date.localeCompare(b.date)||cmp(a,b)});
+  if(og.length)h+='<div class="sec"><div class="sechead"><h2>В процессе</h2><span class="cnt">'+og.length+'</span><span class="shint">дедлайн впереди, работа идёт</span></div><div class="stack">'+og.map(function(t){return card(t,{deadline:true})}).join('')+'</div></div>';
+  return h+'</section>';
 }
 function rangeTitle(){
   if(ui.mode==='day')return longDate(ui.cursor)+' '+parse(ui.cursor).getFullYear();
@@ -636,15 +748,18 @@ function weekHTML(){
   for(var i=0;i<7;i++){
     var d=addDays(ws,i);
     var list=tasks.filter(function(t){return t.date===d&&match(t)}).sort(cmp);
+    var cont=tasks.filter(function(t){return spans(t,d)&&match(t)});
     h+='<div class="wcol'+(d===t0?' today':'')+(i>4?' we':'')+'"><button class="whead" data-gotoday="'+d+'" title="Открыть день"><span class="wd">'+DS[i]+'</span><span class="wn">'+parse(d).getDate()+'</span>'+(list.length?'<span class="wcnt">'+list.length+'</span>':'')+'</button>'+
-      '<div class="wbody" data-drop="day" data-date="'+d+'">'+list.map(function(t){return card(t,{compact:true})}).join('')+'</div></div>';
+      '<div class="wbody" data-drop="day" data-date="'+d+'">'+cont.map(contHTML).join('')+list.map(function(t){return card(t,{compact:true})}).join('')+'</div></div>';
   }
   return h+'</div>';
 }
 function dayHTML(){
   var d=ui.cursor,list=tasks.filter(function(t){return t.date===d&&match(t)}).sort(cmp);
+  var cont=tasks.filter(function(t){return spans(t,d)&&match(t)});
   var done=list.filter(function(t){return t.status==='done'}).length;
-  return '<div class="panel dayview"><div class="daysum"><span>Задач: '+list.length+'</span><span>Выполнено: '+done+'</span></div>'+
+  return '<div class="panel dayview"><div class="daysum"><span>Задач: '+list.length+'</span><span>Выполнено: '+done+'</span>'+(cont.length?'<span>Продолжаются: '+cont.length+'</span>':'')+'</div>'+
+    (cont.length?'<div class="daycont">'+cont.map(contHTML).join('')+'</div>':'')+
     '<div class="daylist" data-drop="day" data-date="'+d+'">'+(list.length?list.map(function(t){return card(t)}).join(''):'<div class="empty"><p>На этот день задач нет. Нажмите на пустое место, чтобы добавить, или перетащите задачу из списка "Без срока".</p></div>')+'</div></div>';
 }
 function sideHTML(){
@@ -665,6 +780,7 @@ function save(){persist();render()}
 function toggleDone(id){
   var t=find(id);if(!t)return;
   t.status=t.status==='done'?'plan':'done';
+  t.doneAt=t.status==='done'?today():'';
   save();
   toast(t.status==='done'?'Задача выполнена':'Задача возвращена в план');
 }
@@ -677,14 +793,15 @@ function navigate(dir){
 /* ---------- форма ---------- */
 var F={};
 function initForm(){
-  F={title:$('#f-title'),date:$('#f-date'),desc:$('#f-desc')};
+  F={title:$('#f-title'),date:$('#f-date'),start:$('#f-start'),talk:$('#f-talk'),desc:$('#f-desc')};
   $('#f-proj').innerHTML='<label class="opt op"><input type="radio" name="proj" value=""><span>Без проекта</span></label>'+
     Object.keys(PJ).map(function(k){return '<label class="opt pj-'+k+'"><input type="radio" name="proj" value="'+k+'"><span><i></i>'+PJ[k]+'</span></label>'}).join('');
   $('#f-status').innerHTML=Object.keys(ST).map(function(k){return '<label class="opt st-'+k+'"><input type="radio" name="status" value="'+k+'"><span><i></i>'+ST[k]+'</span></label>'}).join('');
   $('#f-prio').innerHTML=Object.keys(PR).map(function(k){return '<label class="opt op"><input type="radio" name="prio" value="'+k+'"><span>'+PR[k]+'</span></label>'}).join('');
   $('#form').addEventListener('submit',submitForm);
   $('#f-del').addEventListener('click',onDelete);
-  $('#f-nodate').addEventListener('click',function(){F.date.value=''});
+  $('#f-nodate').addEventListener('click',function(){F.date.value='';F.start.value=''});
+  $('#f-nostart').addEventListener('click',function(){F.start.value=''});
 }
 var getR=function(n){var el=document.querySelector('input[name="'+n+'"]:checked');return el?el.value:''};
 var setR=function(n,v){document.querySelectorAll('input[name="'+n+'"]').forEach(function(el){el.checked=el.value===v})};
@@ -693,10 +810,11 @@ function openForm(t,pre){
   $('#mtitle').textContent=t?'Редактирование задачи':'Новая задача';
   F.title.value=t?t.title:'';
   F.date.value=t?t.date:(pre.date||'');
+  F.start.value=t?t.start:'';F.talk.checked=t?!!t.talk:false;
   F.desc.value=t?t.desc:'';
   setR('proj',t?t.project:'');setR('status',t?t.status:'plan');setR('prio',t?t.priority:'mid');
   $('#f-del').hidden=!t;$('#f-del').textContent='Удалить';$('#f-del').dataset.armed='';
-  $('#e-title').textContent='';
+  $('#e-title').textContent='';$('#e-start').textContent='';
   $('#overlay').hidden=false;
   setTimeout(function(){F.title.focus()},0);
 }
@@ -706,8 +824,13 @@ function submitForm(e){
   var title=F.title.value.trim();
   $('#e-title').textContent='';
   if(!title){$('#e-title').textContent='Введите название задачи';F.title.focus();return}
-  var data={title:title,date:F.date.value,project:getR('proj'),status:getR('status')||'plan',priority:getR('prio')||'mid',desc:F.desc.value.trim()};
+  var date=F.date.value,start=date?F.start.value:'';
+  $('#e-start').textContent='';
+  if(start&&start>date){$('#e-start').textContent='Начало не может быть позже дедлайна';return}
+  if(start===date)start='';
   var t=editing?find(editing):null;
+  var status=getR('status')||'plan';
+  var data={title:title,date:date,start:start,project:getR('proj'),status:status,priority:getR('prio')||'mid',desc:F.desc.value.trim(),talk:F.talk.checked,doneAt:status==='done'?((t&&t.doneAt)||today()):''};
   if(t)Object.assign(t,data);else tasks.push(norm(data));
   var wasEdit=!!t;
   closeForm();save();
@@ -723,6 +846,9 @@ function onDelete(){
 /* ---------- события ---------- */
 document.addEventListener('click',function(e){
   var el=e.target;
+  if(!el.closest('#fPop')&&!el.closest('#fBtn'))closePop();
+  if(el.closest('#fBtn')){togglePop();return}
+  if(el.closest('[data-fclose]')){closePop();return}
   if(el.closest('#overlay')){
     if(el.closest('[data-close]')||el===$('#overlay'))closeForm();
     return;
@@ -739,8 +865,8 @@ document.addEventListener('click',function(e){
   var chk=el.closest('[data-check]');
   if(chk){e.stopPropagation();toggleDone(chk.closest('[data-id]').dataset.id);return}
   var tt=el.closest('[data-totoday]');
-  if(tt){var t=find(tt.closest('[data-id]').dataset.id);t.date=today();save();toast('Задача перенесена на сегодня');return}
-  var c=el.closest('.card[data-id]');
+  if(tt){var t=find(tt.closest('[data-id]').dataset.id);t.date=today();if(t.start&&t.start>=t.date)t.start='';save();toast('Задача перенесена на сегодня');return}
+  var c=el.closest('.card[data-id],.cont[data-id]');
   if(c){openForm(find(c.dataset.id));return}
   var b;
   if((b=el.closest('[data-view]'))){ui.view=b.dataset.view;render();return}
@@ -758,8 +884,8 @@ document.addEventListener('click',function(e){
   if(zone&&el===zone){openForm(null,{date:zone.dataset.date})}
 });
 document.addEventListener('keydown',function(e){
-  if(e.key==='Escape'){if(SYNC.ov&&!SYNC.ov.hidden){closeSync();return}if(BK.ov&&!BK.ov.hidden){BK.ov.hidden=true;return}if(MM.ov&&!MM.ov.hidden){closeMorning();return}if(!$('#overlay').hidden){closeForm();return}}
-  if(e.key==='Enter'&&e.target.classList&&e.target.classList.contains('card')){openForm(find(e.target.dataset.id))}
+  if(e.key==='Escape'){if(RP.ov&&!RP.ov.hidden){closeReport();return}if(!$('#fPop').hidden){closePop();return}if(SYNC.ov&&!SYNC.ov.hidden){closeSync();return}if(BK.ov&&!BK.ov.hidden){BK.ov.hidden=true;return}if(MM.ov&&!MM.ov.hidden){closeMorning();return}if(!$('#overlay').hidden){closeForm();return}}
+  if(e.key==='Enter'&&e.target.classList&&(e.target.classList.contains('card')||e.target.classList.contains('cont'))){openForm(find(e.target.dataset.id))}
 });
 $('#q').addEventListener('input',function(e){ui.q=e.target.value.trim().toLowerCase();render()});
 
@@ -791,6 +917,7 @@ document.addEventListener('drop',function(e){
   drag=null;clearOver();
   if(!t)return;
   t.date=z.dataset.date||'';
+  if(!t.date||(t.start&&t.start>=t.date))t.start='';
   save();
   toast(t.date?'Задача перенесена: '+midDate(t.date):'Задача перенесена в "Без срока"');
 });
@@ -803,23 +930,54 @@ setInterval(function(){if(!document.hidden)pullCloud()},60000);
 var berries=function(d){return Math.floor((focus[d]||0)/FB)};
 var mmss=function(s){s=Math.floor(s);return pad(Math.floor(s/60))+':'+pad(s%60)};
 function dur(s){var m=Math.floor(s/60),h=Math.floor(m/60);return h?h+' ч '+pad(m%60)+' мин':m+' мин'}
-function countHTML(){
-  var s=focus[today()]||0,n=Math.floor(s/FB);
-  return '<b>'+n+'</b> '+pl(n,['клубничка','клубнички','клубничек'])+' · '+dur(s)+' в фокусе';
+var JCAP=27,jarDrop=false;
+function weekBerries(off){var ws=addDays(weekStart(today()),off*7),s=0;for(var i=0;i<7;i++)s+=berries(addDays(ws,i));return s}
+function countHTML(){return dur(focus[today()]||0)+' в фокусе сегодня'}
+function jarSVG(n,drop){
+  var shown=Math.min(n,JCAP),h='',idx=0;
+  for(var r=0;r<6&&idx<shown;r++){
+    var cnt=r%2?4:5;
+    for(var c=0;c<cnt&&idx<shown;c++,idx++){
+      var cx=(r%2?36:28)+c*16+((idx*7)%3-1)*.8;
+      var cy=125-r*15+((idx*5)%3-1)*.8;
+      var rot=((idx*37)%21)-10;
+      var u='<use href="#berry" width="16" height="18"/>';
+      if(drop&&idx===shown-1)u='<g class="drop">'+u+'</g>';
+      h+='<g transform="translate('+(cx-8).toFixed(1)+' '+(cy-9).toFixed(1)+') rotate('+rot+' 8 9)">'+u+'</g>';
+    }
+  }
+  var glass='M28 24 V36 C28 36 16 40 16 56 V124 C16 134 24 142 34 142 H86 C96 142 104 134 104 124 V56 C104 40 92 36 92 36 V24 Z';
+  return '<svg class="jarsvg" viewBox="0 0 120 150" role="img" aria-label="Банка с клубничками: '+n+'">'+
+    '<defs><symbol id="berry" viewBox="0 0 16 18">'+
+      '<path d="M8 17.4C3.8 15.8 1 11.8 1.5 7.8 1.8 5.2 4.3 4.2 8 4.9 11.7 4.2 14.2 5.2 14.5 7.8 15 11.8 12.2 15.8 8 17.4Z" fill="#D9546F"/>'+
+      '<path d="M3.4 8.2C3.6 6.8 4.8 6 6 5.8 4.6 6.6 4 7.6 4 9.4Z" fill="#fff" fill-opacity=".35"/>'+
+      '<g fill="#F8D3DB"><ellipse cx="5.6" cy="9.4" rx=".55" ry=".85"/><ellipse cx="10.4" cy="9.4" rx=".55" ry=".85"/><ellipse cx="8" cy="11.2" rx=".55" ry=".85"/><ellipse cx="5.8" cy="13" rx=".55" ry=".85"/><ellipse cx="10.2" cy="13" rx=".55" ry=".85"/></g>'+
+      '<path d="M8 5.4 5 2.8l1.5 2.5L3.6 5.2l3.4 1.4zM8 5.4l3-2.6-1.5 2.5 2.9-.1-3.4 1.4z" fill="#8FA04A"/>'+
+      '<rect x="7.4" y="1.2" width="1.2" height="3.6" rx=".6" fill="#7A8B3A"/>'+
+    '</symbol></defs>'+
+    '<path d="'+glass+'" class="jback"/>'+h+
+    '<path d="'+glass+'" class="jglass"/>'+
+    '<path d="M18.6 62 V116" class="jhl"/>'+
+    '<rect x="24" y="8" width="72" height="17" rx="5" class="jlid"/>'+
+    '<path d="M32 12 V21 M42 12 V21 M52 12 V21 M62 12 V21 M72 12 V21 M82 12 V21 M92 12 V21" class="jridge"/>'+
+  '</svg>';
 }
 function focusFull(){
   var el=$('#focuscard');if(!el)return;
   var t0=today(),s=focus[t0]||0,n=berries(t0),inb=s%FB;
-  var y=berries(addDays(t0,-1)),ws=weekStart(t0),wk=0;
-  for(var i=0;i<7;i++)wk+=berries(addDays(ws,i));
+  var wk=weekBerries(0),pw=weekBerries(-1),y=berries(addDays(t0,-1));
+  var svg=jarSVG(wk,jarDrop);jarDrop=false;
   el.innerHTML='<div class="fhead"><h2>Фокус</h2><span class="fsub">🍓 за <span class="fseg" role="group" aria-label="Длина блока"><button data-fb="1500" aria-pressed="'+(FB===1500)+'">25</button><button data-fb="1800" aria-pressed="'+(FB===1800)+'">30</button></span> мин</span></div>'+
     '<div class="ftime" id="fc-time">'+mmss(inb)+'</div>'+
     '<div class="fbar"><i id="fc-bar" style="width:'+(inb/FB*100).toFixed(1)+'%"></i></div>'+
     '<div class="fhint">до следующей клубнички</div>'+
     '<div class="fbtns"><button class="btn primary" data-fstart>'+(fRun?'Пауза':(s>0?'Продолжить':'Старт'))+'</button><button class="link" data-freset>Сбросить день</button></div>'+
-    '<div class="fberries" aria-label="Клубничек сегодня: '+n+'">'+(n?'🍓'.repeat(Math.min(n,24))+(n>24?' +'+(n-24):''):'<span class="fnone">Пока ни одной. Запустите таймер.</span>')+'</div>'+
-    '<div class="fcount" id="fc-count">'+countHTML()+'</div>'+
-    '<div class="fstats">Вчера: '+y+' · За неделю: '+wk+'</div>';
+    '<div class="jarwrap"><div class="jar">'+svg+'</div><div class="jinfo">'+
+      '<div class="jbig"><b>'+wk+'</b><span>'+pl(wk,['клубничка','клубнички','клубничек'])+'<br>на этой неделе</span></div>'+
+      (wk>=JCAP?'<div class="jfull">Банка полна'+(wk>JCAP?' (+'+(wk-JCAP)+')':'')+'!</div>':(wk===0?'<div class="jfull empty0">Банка пока пуста</div>':''))+
+      '<div class="jrows"><div>Сегодня <b>'+n+'</b></div><div>Вчера <b>'+y+'</b></div><div>Прошлая неделя <b>'+pw+'</b></div></div>'+
+      '<div class="fcount" id="fc-count">'+countHTML()+'</div>'+
+    '</div></div>';
 }
 function focusTick(){
   var s=focus[today()]||0,inb=s%FB;
@@ -836,7 +994,7 @@ function fStep(){
     var k=today(),before=focus[k]||0;
     focus[k]=before+dt;
     var a=Math.floor(focus[k]/FB),b=Math.floor(before/FB);
-    if(a>b){toast('🍓 Клубничка! Сегодня: '+a);persist('focus');focusFull()}
+    if(a>b){jarDrop=true;toast('🍓 Клубничка! Сегодня: '+a+', за неделю: '+weekBerries(0));persist('focus');focusFull()}
     else if(Math.floor(before/60)!==Math.floor(focus[k]/60))persist('focus');
   }
   focusTick();
@@ -946,6 +1104,85 @@ function initSync(){
   });
 }
 
+/* отчёт на планёрку */
+var RP={off:-1,all:false};
+function rpRange(){var ws=addDays(weekStart(today()),RP.off*7);return [ws,addDays(ws,6)]}
+function rpLabel(){return RP.off===-1?'Прошлая неделя':(RP.off===0?'Эта неделя':'Неделя')}
+function rpFmt(r){
+  var a=parse(r[0]),b=parse(r[1]);
+  return a.getMonth()===b.getMonth()?a.getDate()+'–'+b.getDate()+' '+MG[b.getMonth()]:a.getDate()+' '+MS[a.getMonth()]+' – '+b.getDate()+' '+MS[b.getMonth()];
+}
+function rpItems(){
+  var r=rpRange(),ws=r[0],we=r[1];
+  return tasks.filter(function(t){
+    if(!RP.all&&!t.talk)return false;
+    if(t.status==='done'){var d=t.doneAt||t.date;return !!d&&d>=ws&&d<=we}
+    if(t.status!=='work'||!t.date)return false;
+    return (t.start||t.date)<=we&&t.date>=ws;
+  });
+}
+function rpGroups(){
+  var g={};
+  rpItems().forEach(function(t){var k=t.project||'';(g[k]=g[k]||[]).push(t)});
+  return Object.keys(PJ).concat(['']).filter(function(k){return g[k]}).map(function(k){
+    g[k].sort(function(a,b){var da=a.status==='done'?0:1,db=b.status==='done'?0:1;return da-db||a.title.localeCompare(b.title)});
+    return {key:k,name:k?PJ[k]:'Без проекта',items:g[k]};
+  });
+}
+function rpText(){
+  var lines=[rpLabel()+' ('+rpFmt(rpRange())+')',''];
+  rpGroups().forEach(function(g){
+    lines.push(g.name);
+    g.items.forEach(function(t){lines.push('— '+t.title+(t.status==='done'?'':' (в работе)'))});
+    lines.push('');
+  });
+  return lines.join('\n').trim();
+}
+function renderReport(){
+  var gs=rpGroups(),total=0,h='';
+  RP.title.textContent=rpLabel()+' · '+rpFmt(rpRange());
+  $('#rp-all').checked=RP.all;
+  gs.forEach(function(g){
+    total+=g.items.length;
+    h+='<div class="rgroup"><div class="rgh">'+(g.key?'<span class="tag pj-'+g.key+'">'+g.name+'</span>':'<span class="rnone">'+g.name+'</span>')+'<span class="rcnt">'+g.items.length+'</span></div>'+
+      g.items.map(function(t){
+        var d=t.status==='done';
+        return '<label class="ritem"><input type="checkbox" data-rtalk="'+t.id+'"'+(t.talk?' checked':'')+'><div class="rbody"><div class="rtt">'+esc(t.title)+'</div>'+(t.desc?'<div class="rds">'+esc(t.desc)+'</div>':'')+'</div><span class="rst '+(d?'done':'work')+'">'+(d?'сделано':'в работе')+'</span></label>';
+      }).join('')+'</div>';
+  });
+  RP.list.innerHTML=h||'<div class="rempty">'+(RP.all?'За эту неделю нет сделанных задач и задач в работе.':'Пока нет отмеченных задач. В задаче поставьте галочку "Рассказать на планёрке" или включите "Показать и мелкие задачи".')+'</div>';
+  $('#rp-copy').disabled=!total;
+}
+function openReport(){RP.off=-1;RP.all=false;RP.ov.hidden=false;renderReport()}
+function closeReport(){RP.ov.hidden=true}
+function rpCopy(){
+  var txt=rpText();
+  function ok(){toast('Текст скопирован')}
+  function fallback(){
+    var ta=document.createElement('textarea');ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';
+    document.body.appendChild(ta);ta.select();
+    try{document.execCommand('copy');ok()}catch(e){toast('Не удалось скопировать')}
+    ta.remove();
+  }
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(ok,fallback);else fallback();
+}
+function initReport(){
+  RP.ov=$('#report');RP.list=$('#rp-list');RP.title=$('#rp-title');
+  $('#rpBtn').addEventListener('click',openReport);
+  RP.ov.addEventListener('click',function(e){
+    e.stopPropagation();
+    if(e.target===RP.ov||e.target.closest('[data-rclose]')){closeReport();return}
+    var o=e.target.closest('[data-roff]');
+    if(o){RP.off+=Number(o.dataset.roff);renderReport();return}
+    if(e.target.closest('#rp-copy'))rpCopy();
+  });
+  RP.ov.addEventListener('change',function(e){
+    if(e.target.id==='rp-all'){RP.all=e.target.checked;renderReport();return}
+    var id=e.target.dataset&&e.target.dataset.rtalk;
+    if(id){var t=find(id);if(t){t.talk=e.target.checked;save();renderReport()}}
+  });
+}
+
 /* окно нового дня */
 var MM={};
 function initMorning(){
@@ -984,7 +1221,7 @@ function maybePrompt(){
 }
 
 /* старт */
-initForm();initMorning();initBackup();initSync();
+initForm();initMorning();initBackup();initSync();initReport();
 tasks=loadLocal();
 if(!tasks){tasks=seed();mirrorLocal()}
 render();focusFull();syncUI();
